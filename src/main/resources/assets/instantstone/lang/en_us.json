@@ -1,6 +1,6 @@
 {
-  "block.instantstone.instant_repeater": "Instant Repeater",
-  "item.instantstone.instant_repeater": "Instant Repeater",
+  "block.instantstone.instant_repeater": "Instant Redstone Repeater",
+  "item.instantstone.instant_repeater": "Instant Redstone Repeater",
   "block.instantstone.instant_redstone_torch": "Instant Redstone Torch",
   "block.instantstone.instant_redstone_wall_torch": "Instant Redstone Torch",
   "item.instantstone.instant_redstone_torch": "Instant Redstone Torch"
