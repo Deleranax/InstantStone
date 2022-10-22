@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "instantstone:block/redstone_torch_off"
+    },
+    "lit=true": {
+      "model": "instantstone:block/redstone_torch"
+    }
+  }
+}

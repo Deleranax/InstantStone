@@ -1,22 +1,18 @@
-package fr.dfwightstudio.instantstone;
+package fr.dwightstudio.instantstone;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.StandingAndWallBlockItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import org.openjdk.nashorn.internal.ir.annotations.Ignore;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -37,6 +33,12 @@ public class InstantStone {
 
     public static final RegistryObject<Item> INSTANT_REPEATOR_ITEM = ITEMS.register("instant_repeater", () -> new BlockItem(INSTANT_REPEATER.get(), new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE)));
 
+    public static final RegistryObject<Block> INSTANT_REDSTONE_TORCH = BLOCKS.register("instant_redstone_torch", InstantRedstoneTorchBlock::new);
+    public static final RegistryObject<Block> INSTANT_REDSTONE_WALL_TORCH = BLOCKS.register("instant_redstone_wall_torch", InstantRedstoneWallTorchBlock::new);
+
+    public static final RegistryObject<Item> INSTANT_REDSTONE_TORCH_ITEM = ITEMS.register("instant_redstone_torch", () -> new StandingAndWallBlockItem(INSTANT_REDSTONE_TORCH.get(), INSTANT_REDSTONE_WALL_TORCH.get(), (new Item.Properties()).tab(CreativeModeTab.TAB_REDSTONE)));
+
+
 
     public InstantStone() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -48,10 +50,5 @@ public class InstantStone {
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(InstantStone.class);
-    }
-
-    @SubscribeEvent
-    public static void onClientSetupEvent(FMLClientSetupEvent event) {
-        ItemBlockRenderTypes.setRenderLayer(INSTANT_REPEATER.get(), RenderType.cutout());
     }
 }
