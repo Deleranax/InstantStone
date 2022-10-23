@@ -29,10 +29,18 @@ public class InstantStone {
     // Create a Deferred Register to hold Items which will all be registered under the "InstantStone" namespace
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
 
+    // BLOCKS & ITEMS
+    // Repeater
     public static final RegistryObject<Block> INSTANT_REPEATER = BLOCKS.register("instant_repeater", InstantRepeaterBlock::new);
 
     public static final RegistryObject<Item> INSTANT_REPEATOR_ITEM = ITEMS.register("instant_repeater", () -> new BlockItem(INSTANT_REPEATER.get(), new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE)));
 
+    // Comparator
+    public static final RegistryObject<Block> INSTANT_COMPARATOR = BLOCKS.register("instant_comparator", InstantComparatorBlock::new);
+
+    public static final RegistryObject<Item> INSTANT_COMPARATOR_ITEM = ITEMS.register("instant_comparator", () -> new BlockItem(INSTANT_COMPARATOR.get(), new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE)));
+
+    // Torch
     public static final RegistryObject<Block> INSTANT_REDSTONE_TORCH = BLOCKS.register("instant_redstone_torch", InstantRedstoneTorchBlock::new);
     public static final RegistryObject<Block> INSTANT_REDSTONE_WALL_TORCH = BLOCKS.register("instant_redstone_wall_torch", InstantRedstoneWallTorchBlock::new);
 
