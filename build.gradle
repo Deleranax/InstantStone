@@ -4,7 +4,7 @@ plugins {
 
 
 group = 'fr.dwightstudio'
-version = '1.2'
+version = '1.2-SNAPSHOT'
 
 java {
     archivesBaseName = 'InstantStone'
