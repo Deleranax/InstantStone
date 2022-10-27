@@ -27,7 +27,6 @@ import java.util.function.ToIntFunction;
 
 public class InstantRedstoneTorchBlock extends TorchBlock {
     public static final BooleanProperty LIT = BlockStateProperties.LIT;
-    private static long lastTickToggle = 0;
     private static final Map<BlockGetter, List<InstantRedstoneTorchBlock.Toggle>> RECENT_TOGGLES = new WeakHashMap<>();
 
     public InstantRedstoneTorchBlock() {
@@ -65,14 +64,13 @@ public class InstantRedstoneTorchBlock extends TorchBlock {
 
     public void tick(@NotNull BlockState p_221949_, @NotNull ServerLevel p_221950_, @NotNull BlockPos p_221951_, @NotNull RandomSource p_221952_) {
         stick(p_221949_, p_221950_, p_221951_);
-        //TODO: Add security
     }
 
     public void stick(BlockState p_221949_, Level p_221950_, BlockPos p_221951_) {
         boolean flag = this.hasNeighborSignal(p_221950_, p_221951_, p_221949_);
         List<InstantRedstoneTorchBlock.Toggle> list = RECENT_TOGGLES.get(p_221950_);
 
-        while(list != null && !list.isEmpty() && p_221950_.getGameTime() - (list.get(0)).when > 60L) {
+        while(list != null && !list.isEmpty() && p_221950_.getGameTime() - (list.get(0)).when > 5L) {
             list.remove(0);
         }
 
@@ -85,7 +83,7 @@ public class InstantRedstoneTorchBlock extends TorchBlock {
                 }
             }
         } else if (!flag && !isToggledTooFrequently(p_221950_, p_221951_, false)) {
-            p_221950_.setBlock(p_221951_, p_221949_.setValue(LIT, Boolean.valueOf(true)), 3);
+            p_221950_.setBlock(p_221951_, p_221949_.setValue(LIT, Boolean.TRUE), 3);
         }
     }
 
