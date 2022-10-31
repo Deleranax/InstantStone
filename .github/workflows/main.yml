@@ -20,6 +20,6 @@ jobs:
         file_path: "InstantStone-${{ steps.download.outputs.tag_name }}-SNAPSHOT.jar"
         display_name: "InstantStone v${{ steps.download.outputs.tag_name }}"
         game_endpoint: "minecraft"
-        game_versions: "Minecraft 1.19:1.19.1:1.19.2:1.19.3,Java 17,Forge"
+        game_versions: "Minecraft 1.19:1.19,Minecraft 1.19:1.19.1, Minecraft 1.19:1.19.2, Minecraft 1.19:1.19.3,Java 17,Forge"
         project_id: "695517"
         token: "${{ secrets.CURSEFORGE_TOKEN }}"
