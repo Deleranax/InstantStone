@@ -17,7 +17,8 @@ jobs:
     - name: "Upload to CurseForge"
       uses: itsmeow/curseforge-upload@v3
       with:
-        file_path: "build/libs/InstantStone-${{ steps.download.outputs.tag_name }}-SNAPSHOT.jar"
+        file_path: "InstantStone-${{ steps.download.outputs.tag_name }}-SNAPSHOT.jar"
+        display_name: "InstantStone v${{ steps.download.outputs.tag_name }}"
         game_endpoint: "minecraft"
         game_versions: "Minecraft 1.19:1.19.1:1.19.2:1.19.3,Java 17,Forge"
         project_id: "695517"
