@@ -25,13 +25,13 @@ displayName = "InstantStone" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification <here>
 #updateJSONURL="http://myurl.me/" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
-#displayURL="http://example.com/" #optional
+displayURL="http://dwight-studio.fr/" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
-#logoFile="InstantStone.png" #optional
+logoFile="logo.png" #optional
 # A text field displayed in the mod UI
 #credits="Thanks for this example mod goes to Java" #optional
 # A text field displayed in the mod UI
-authors = "Deleranax" #optional
+authors = "Dwight Studio's Team" #optional
 # Display Test controls the display for your mod in the server connection screen
 # MATCH_VERSION means that your mod will cause a red X if the versions on client and server differ. This is the default behaviour and should be what you choose if you have server and client elements to your mod.
 # IGNORE_SERVER_VERSION means that your mod will not cause a red X if it's present on the server but not on the client. This is what you should use if you're a server only mod.
@@ -42,7 +42,7 @@ authors = "Deleranax" #optional
 
 # The description text for the mod (multi line!) (#mandatory)
 description = '''
-Lightweight mod for instant redstone repeator.
+Lightweight mod for instant redstone components.
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.instantstone]] #optional
