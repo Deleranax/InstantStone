@@ -22,6 +22,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
@@ -35,6 +36,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class InstantRepeaterBlock extends InstantDiodeBlock {
     public InstantRepeaterBlock() {
@@ -88,5 +90,16 @@ public class InstantRepeaterBlock extends InstantDiodeBlock {
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> p_55828_) {
         p_55828_.add(FACING, LOCKED, POWERED);
+    }
+
+    @Override
+    public boolean canConnectRedstone(BlockState state, BlockGetter level, BlockPos pos, @Nullable Direction direction) {
+        if (direction == null) return true;
+
+        Direction clockwise = state.getValue(FACING).getClockWise();
+        Direction counterClockwise = state.getValue(FACING).getCounterClockWise();
+
+        if (direction.equals(clockwise)) return false;
+        return !direction.equals(counterClockwise);
     }
 }

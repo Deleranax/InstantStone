@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "minecraft:block/redstone_torch"
+    "layer0": "instantstone:block/redstone_torch"
   }
 }

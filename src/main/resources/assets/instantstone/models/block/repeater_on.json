@@ -5,7 +5,7 @@
         "particle": "block/repeater_on",
         "slab": "block/smooth_stone",
         "top": "block/repeater_on",
-        "lit": "block/redstone_torch"
+        "lit": "instantstone:block/redstone_torch"
     },
     "elements": [
         {   "from": [ 0, 0, 0 ],
