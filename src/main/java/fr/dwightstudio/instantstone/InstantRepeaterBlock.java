@@ -94,12 +94,14 @@ public class InstantRepeaterBlock extends InstantDiodeBlock {
 
     @Override
     public boolean canConnectRedstone(BlockState state, BlockGetter level, BlockPos pos, @Nullable Direction direction) {
-        if (direction == null) return true;
+        if (direction == null) {
+            return true;
+        } else {
 
-        Direction clockwise = state.getValue(FACING).getClockWise();
-        Direction counterClockwise = state.getValue(FACING).getCounterClockWise();
+            Direction input = state.getValue(FACING);
+            Direction output = state.getValue(FACING).getOpposite();
 
-        if (direction.equals(clockwise)) return false;
-        return !direction.equals(counterClockwise);
+            return direction.equals(input) || direction.equals(output);
+        }
     }
 }
