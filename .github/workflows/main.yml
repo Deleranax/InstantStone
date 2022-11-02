@@ -23,4 +23,6 @@ jobs:
         game_endpoint: "minecraft"
         game_versions: "Minecraft 1.19:1.19.3,Java 17,Forge"
         project_id: "695517"
+        changelog_type: "markdown"
+        changelog: "[Changelog available on GitHub](https://github.com/Dwight-Studio/InstantStone/releases)"
         token: "${{ secrets.CURSEFORGE_TOKEN }}"
