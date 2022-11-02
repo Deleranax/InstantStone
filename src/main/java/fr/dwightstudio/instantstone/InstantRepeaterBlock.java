@@ -82,9 +82,9 @@ public class InstantRepeaterBlock extends InstantDiodeBlock {
             }
 
             f /= 16.0F;
-            double d3 = (double)(f * (float)direction.getStepX());
-            double d4 = (double)(f * (float)direction.getStepZ());
-            p_221965_.addParticle(DustParticleOptions.REDSTONE, d0 + d3, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
+            double d3 = f * (float)direction.getStepX();
+            double d4 = f * (float)direction.getStepZ();
+            p_221965_.addParticle(InstantStone.INSTANT_REDSTONE_PARTICLE, d0 + d3, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
         }
     }
 

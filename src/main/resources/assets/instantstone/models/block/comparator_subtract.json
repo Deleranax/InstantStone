@@ -2,9 +2,9 @@
     "render_type": "cutout",
     "ambientocclusion": false,
     "textures": {
-        "particle": "block/comparator",
+        "particle": "instantstone:block/comparator",
         "slab": "block/smooth_stone",
-        "top": "block/comparator",
+        "top": "instantstone:block/comparator",
         "unlit": "instantstone:block/redstone_torch_off",
         "lit": "instantstone:block/redstone_torch"
     },

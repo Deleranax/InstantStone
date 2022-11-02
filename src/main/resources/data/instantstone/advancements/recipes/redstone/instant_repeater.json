@@ -1,0 +1,44 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_amethyst": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:amethyst_shard"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "instantstone:instant_repeater"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_the_recipe_repeater": {
+      "conditions": {
+        "recipe": "minecraft:repeater"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_amethyst",
+      "has_the_recipe"
+      ],
+    [
+      "has_the_recipe_repeater",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "instantstone:instant_repeater"
+    ]
+  }
+}

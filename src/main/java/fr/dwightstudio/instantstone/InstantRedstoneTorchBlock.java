@@ -17,7 +17,6 @@ package fr.dwightstudio.instantstone;
 import com.google.common.collect.Lists;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
@@ -43,7 +42,7 @@ public class InstantRedstoneTorchBlock extends TorchBlock {
     private static final Map<BlockGetter, List<InstantRedstoneTorchBlock.Toggle>> RECENT_TOGGLES = new WeakHashMap<>();
 
     public InstantRedstoneTorchBlock() {
-        super(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().instabreak().lightLevel(litBlockEmission(7)).sound(SoundType.WOOD), DustParticleOptions.REDSTONE);
+        super(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().instabreak().lightLevel(litBlockEmission(7)).sound(SoundType.WOOD), InstantStone.INSTANT_REDSTONE_PARTICLE);
         this.registerDefaultState(this.stateDefinition.any().setValue(LIT, Boolean.TRUE));
     }
 

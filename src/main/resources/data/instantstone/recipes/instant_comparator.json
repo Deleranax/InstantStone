@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "instantstone:instant_redstone_torch"
+    },
+    "I": {
+      "item": "minecraft:stone"
+    },
+    "X": {
+      "item": "minecraft:quartz"
+    }
+  },
+  "pattern": [
+    " # ",
+    "#X#",
+    "III"
+  ],
+  "result": {
+    "item": "instantstone:instant_comparator"
+  }
+}

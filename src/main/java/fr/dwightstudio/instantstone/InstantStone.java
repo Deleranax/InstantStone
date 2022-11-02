@@ -15,11 +15,14 @@
 package fr.dwightstudio.instantstone;
 
 import com.mojang.logging.LogUtils;
+import com.mojang.math.Vector3f;
+import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.StandingAndWallBlockItem;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -42,6 +45,10 @@ public class InstantStone {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
     // Create a Deferred Register to hold Items which will all be registered under the "InstantStone" namespace
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
+
+    // PARTICLES
+    public static final Vector3f INSTANT_REDSTONE_PARTICLE_COLOR = new Vector3f(Vec3.fromRGB24(15018930));
+    public static final DustParticleOptions INSTANT_REDSTONE_PARTICLE = new DustParticleOptions(INSTANT_REDSTONE_PARTICLE_COLOR, 1.0F);
 
     // BLOCKS & ITEMS
     // Repeater
